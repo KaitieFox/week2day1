@@ -131,33 +131,73 @@ namespace week2day1
             //Console.WriteLine("The array is of length " + newArray.Length);  //this allows user to input array size.
             ////think like, "Welcome to Party Manager! How many people are you inviting? Cool, add their names." Loop required.
 
-            //Let's do some examples! Helper methods!
-            string[] birthMonths = { "October", "July" , "October" , "May" };
-            Console.WriteLine(Array.IndexOf(birthMonths, "October"));
-            Console.WriteLine(Array.IndexOf(birthMonths, "August"));
-            // when returns -1, means it doesn't exist.
-            Console.WriteLine(Array.IndexOf(birthMonths, "Oct"));
-            //looks for the whole element, not the string. Will return -1
-            //There's another version of this method where we can say where to start from.
-            //indexOf for strings = put in a value. returns the FIRST index it's found.
-            //also for arrays.
+            ////Let's do some examples! Helper methods!
 
-            Console.WriteLine("\n");
+            //string[] birthMonths = { "October", "July" , "October" , "May" };
+            //Console.WriteLine(Array.IndexOf(birthMonths, "October"));
+            //Console.WriteLine(Array.IndexOf(birthMonths, "August"));
 
-            int[] numbers = { 2, 5, 9, 4, 3, 4, 6, 5, };
-            Console.WriteLine(Array.LastIndexOf(numbers, 4));
-            //LastIndexOf searches from the end. Whole array.
-            Console.WriteLine("\n" + numbers[0]);
+            //// when returns -1, means it doesn't exist.
 
-            Array.Reverse(numbers);
-            Console.WriteLine(numbers[0]);
+            //Console.WriteLine(Array.IndexOf(birthMonths, "Oct"));
 
-            Console.WriteLine(numbers[numbers.Length - 1]);
-            //cool you did extra biz
+            ////looks for the whole element, not the string. Will return -1
+            ////There's another version of this method where we can say where to start from.
+            ////indexOf for strings = put in a value. returns the FIRST index it's found.
+            ////also for arrays.
 
-            Array.Sort(numbers); //Sort will either sort in ascending order number, and alphabetical for strings.
-            Console.WriteLine(numbers[0]);//first spot
-            Console.WriteLine(numbers[numbers.Length - 1]);//last spot
+            // Console.WriteLine("\n");
+
+            // int[] numbers = { 2, 5, 9, 4, 3, 4, 6, 5, };
+            // Console.WriteLine(Array.LastIndexOf(numbers, 4));
+
+            // LastIndexOf searches from the end.Whole array.
+            
+            //Console.WriteLine("\n" + numbers[0]);
+
+            // Array.Reverse(numbers);
+            // Console.WriteLine(numbers[0]);
+
+            // Console.WriteLine(numbers[numbers.Length - 1]);
+            // cool you did extra biz
+
+            // Array.Sort(numbers); //Sort will either sort in ascending order number, and alphabetical for strings.
+            // Console.WriteLine(numbers[0]);//first spot
+            // Console.WriteLine(numbers[numbers.Length - 1]);//last spot
+
+
+            //DO it!!
+            string[] firstNames = { "Monica", "Raz", "David", "Brian", "Kaitie", "Jarryd", "Ali" };
+            Console.WriteLine(Array.IndexOf(firstNames, "Kaitie"));
+
+            int[] luckyNumbers = { 13, 64, 2, 3, 7, 4, 777, 13, 2, 13, 13, 7, 777, 64, 4, 4, 4 };
+            Console.WriteLine(Array.LastIndexOf(luckyNumbers, 13));
+
+            char[] alphabet = { 'a', 'b', 'd', 'd', 'a', 'c', 'v', 'f', 'o', 'x' };
+            Console.WriteLine(alphabet[0]); //should show a
+            Array.Reverse(alphabet);
+            Console.WriteLine(alphabet[0]);//should show x
+
+            string[] randomNames = { "Monica", "Raz", "David", "Brian", "Kaitie", "Jarryd", "Ali" };
+            Array.Sort(randomNames);
+            Console.WriteLine((randomNames[0]) + " and " + (randomNames[randomNames.Length - 1])); //should show Ali and Raz
+
+            int[] favNumbers = { 5, 3, 9, 7, 42, 11, 21, 21, 48, 21 };
+            Array.Sort(favNumbers);
+            Console.WriteLine((favNumbers[0]) + " and " + (favNumbers[favNumbers.Length - 1]));//should show 3 and 48
+
+            Console.WriteLine("Let's try numbers ourselves. Can I have 5 numbers?");
+            double[] userNumbers = new double[5];
+            userNumbers[0] = double.Parse(Console.ReadLine());
+            userNumbers[1] = double.Parse(Console.ReadLine());
+            userNumbers[2] = double.Parse(Console.ReadLine());
+            userNumbers[3] = double.Parse(Console.ReadLine());
+            userNumbers[4] = double.Parse(Console.ReadLine());
+
+            Array.Sort(userNumbers);
+            Console.WriteLine("The smallest number is " + userNumbers[0]);
+            //hell yeah it works.
+            Console.WriteLine("And the biggest number is " + userNumbers[userNumbers.Length - 1]);
 
 
 

@@ -21,35 +21,35 @@ namespace week2day1
             //This plural is for us, the humans, to make sense of it.
 
             //initialize the array
-            int[] favoriteNumbers = { 1, 2, 3, 4, 5, 6, };
+            //int[] favoriteNumbers = { 1, 2, 3, 4, 5, 6, };
 
-            string[] studentNames = { "Raz", "Monica", "David", "Brian", "Ali" };
+            //string[] studentNames = { "Raz", "Monica", "David", "Brian", "Ali" };
 
             //Console.WriteLine(favoriteNumbers[0]);
             //Console.WriteLine(studentNames[2]);
 
-            //Do it.
-            string[] vacationSpots = { "Aruba", "Jamaica", "Sweden", "California", "Alaska",
-                "India", "Hawaii", "Mexico", "Switzerland", "Italy" };
-            Console.WriteLine(vacationSpots[0] + " " + vacationSpots[9]);          
+            ////Do it.
+            //string[] vacationSpots = { "Aruba", "Jamaica", "Sweden", "California", "Alaska",
+            //    "India", "Hawaii", "Mexico", "Switzerland", "Italy" };
+            //Console.WriteLine(vacationSpots[0] + " " + vacationSpots[9]);          
 
 
-            int[] childAge = { 1, 12, 6 };
-            Console.WriteLine(childAge[0] + " " + childAge[1] + " " + childAge[2]);
+            //int[] childAge = { 1, 12, 6 };
+            //Console.WriteLine(childAge[0] + " " + childAge[1] + " " + childAge[2]);
 
 
-            decimal[] gpa = { 2.0m, 2.5m, 2.9m, 3.0m, 3.1m, 3.8m, 3.9m, 4.0m };
-            Console.WriteLine(gpa[7]);
+            //decimal[] gpa = { 2.0m, 2.5m, 2.9m, 3.0m, 3.1m, 3.8m, 3.9m, 4.0m };
+            //Console.WriteLine(gpa[7]);
 
-            char[] peerLetter = { 'M', 'R', 'B', 'D' };
-            Console.WriteLine(peerLetter[3]);
+            //char[] peerLetter = { 'M', 'R', 'B', 'D' };
+            //Console.WriteLine(peerLetter[3]);
 
-            Console.WriteLine("\n\n");
+            //Console.WriteLine("\n\n");
 
-            //this is how we initialize an array when we don't know all the elements upfront.
-            //we declare an empty array.
-            //but there are four arrays, and we can only put ints in there.
-            int[] numbers = new int[4];
+            ////this is how we initialize an array when we don't know all the elements upfront.
+            ////we declare an empty array.
+            ////but there are four arrays, and we can only put ints in there.
+            //int[] numbers = new int[4];
 
             //Console.WriteLine("Hello again. Can you guess my two numbers?");
 
@@ -71,21 +71,21 @@ namespace week2day1
 
             //do it. this is the unsure thing.
 
-            string[] daysOfWeek = new string[7];
-            daysOfWeek[0] = "Sunday";
-            daysOfWeek[1] = "Mon";
-            daysOfWeek[2] = "Tues";
-            daysOfWeek[3] = "Wed";
-            daysOfWeek[4] = "Thurs";
-            daysOfWeek[5] = "Fri";
-            daysOfWeek[6] = "Sat";
+            //string[] daysOfWeek = new string[7];
+            //daysOfWeek[0] = "Sunday";
+            //daysOfWeek[1] = "Mon";
+            //daysOfWeek[2] = "Tues";
+            //daysOfWeek[3] = "Wed";
+            //daysOfWeek[4] = "Thurs";
+            //daysOfWeek[5] = "Fri";
+            //daysOfWeek[6] = "Sat";
 
-            int[] studAges = new int[5];
-            studAges[0] = 21;
-            studAges[1] = 29;
-            studAges[2] = 24;
-            studAges[3] = 11;
-            studAges[4] = 19;
+            //int[] studAges = new int[5];
+            //studAges[0] = 21;
+            //studAges[1] = 29;
+            //studAges[2] = 24;
+            //studAges[3] = 11;
+            //studAges[4] = 19;
 
             //Console.WriteLine(daysOfWeek.Length); //.Length counts characters. .Length for an array counts the indices.
             //Console.WriteLine(daysOfWeek[0].Length); //counts the characters
@@ -122,16 +122,42 @@ namespace week2day1
             //like have a long poem already indexed. Have user input several numbers, referring to the words. Let the words pull together.
 
             //week2day2 stuff. Finishing arrays
-            Console.WriteLine("Please enter the size of your array.");
+            //Console.WriteLine("Please enter the size of your array.");
 
-            int arraySize = int.Parse(Console.ReadLine());
+            //int arraySize = int.Parse(Console.ReadLine());
 
-            int[] newArray = new int[arraySize];
+            //int[] newArray = new int[arraySize];
 
-            Console.WriteLine("The array is of length " + newArray.Length);  //this allows user to input array size.
-            //think like, "Welcome to Party Manager! How many people are you inviting? Cool, add their names." Loop required.
+            //Console.WriteLine("The array is of length " + newArray.Length);  //this allows user to input array size.
+            ////think like, "Welcome to Party Manager! How many people are you inviting? Cool, add their names." Loop required.
 
-            //Let's do some examples!
+            //Let's do some examples! Helper methods!
+            string[] birthMonths = { "October", "July" , "October" , "May" };
+            Console.WriteLine(Array.IndexOf(birthMonths, "October"));
+            Console.WriteLine(Array.IndexOf(birthMonths, "August"));
+            // when returns -1, means it doesn't exist.
+            Console.WriteLine(Array.IndexOf(birthMonths, "Oct"));
+            //looks for the whole element, not the string. Will return -1
+            //There's another version of this method where we can say where to start from.
+            //indexOf for strings = put in a value. returns the FIRST index it's found.
+            //also for arrays.
+
+            Console.WriteLine("\n");
+
+            int[] numbers = { 2, 5, 9, 4, 3, 4, 6, 5, };
+            Console.WriteLine(Array.LastIndexOf(numbers, 4));
+            //LastIndexOf searches from the end. Whole array.
+            Console.WriteLine("\n" + numbers[0]);
+
+            Array.Reverse(numbers);
+            Console.WriteLine(numbers[0]);
+
+            Console.WriteLine(numbers[numbers.Length - 1]);
+            //cool you did extra biz
+
+            Array.Sort(numbers); //Sort will either sort in ascending order number, and alphabetical for strings.
+            Console.WriteLine(numbers[0]);//first spot
+            Console.WriteLine(numbers[numbers.Length - 1]);//last spot
 
 
 
